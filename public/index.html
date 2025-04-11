@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <nav>
+            <img src="logo.png" alt="Logo">
+            <div>
+                <button>Login</button>
+                <button>Sign Up</button>
+                <button href="">Contact</button>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="input-section">
+            <h1>Amazon Product Summary Generator</h1>
+            <input type="text" id="product-url" placeholder="Enter Amazon Product URL">
+            <button onclick="fetchSummary()">Get Summary</button>
+        </div>
+        <div class="output-section">
+            <div id="result">Summary will appear here...</div>
+        </div>
+    </div>
+    <div>
+        <div class="contact">
+            <button><a href="https://www.linkedin.com/in/apoorwa-kumar-479461302/">Linkedin</a></button>
+            <button><a href="https://github.com/apoorwa46">Github</a></button>
+            <button><a href="https://www.instagram.com/apoorwa466/">Instagram</a></button>
+        </div>
+        <footer>
+            <p>© 2025 Amazon Product Summary Generator</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; }
+        h1 { color: #333; }
+        img { max-width: 200px; display: block; margin: 10px 0; }
+        .container { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Loading...</h1>
+        <img id="product-image" src="" alt="Product Image">
+        <p><strong>Price:</strong> <span id="price"></span></p>
+        <p><strong>Rating:</strong> <span id="rating"></span> (<span id="totalRatings"></span>)</p>
+        <p><strong>Availability:</strong> <span id="availability"></span></p>
+        <h2>AI-Generated Summary</h2>
+        <p id="ai-summary"></p>
+        <h2>Product Details</h2>
+        <ul id="product-details"></ul>
+    </div>
+
+    <script>
+        async function fetchProductData() {
+            try {
+                const response = await fetch('/scraped-data.json');
+                const data = await response.json();
+
+                document.getElementById("title").textContent = data.title;
+                document.getElementById("price").textContent = data.price;
+                document.getElementById("rating").textContent = data.rating;
+                document.getElementById("totalRatings").textContent = data.totalRatings;
+                document.getElementById("availability").textContent = data.availability;
+                document.getElementById("product-image").src = data.images[0] || '';
+                document.getElementById("ai-summary").textContent = data.aiSummary;
+
+                const detailsList = document.getElementById("product-details");
+                detailsList.innerHTML = "";
+                data.productDetails.forEach(detail => {
+                    const li = document.createElement("li");
+                    li.textContent = detail;
+                    detailsList.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error loading product data:", error);
+            }
+        }
+
+        fetchProductData();
+    </script>
+</body>
+</html>
+ -->
